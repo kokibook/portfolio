@@ -109,7 +109,7 @@ class PersonModel(models.Model):
     )
     
     age = models.CharField(
-        max_length=20,
+        max_length=50,
         blank=False, 
         null=False,
         verbose_name="年齢",
