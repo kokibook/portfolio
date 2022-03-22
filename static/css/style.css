@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    font-size: 100%;
+    line-height: 1.7;
+    -webkit-text-size-adjust: 100%;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+header {
+    background-color:#fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #2f3232;
+}
+
+main {
+    background-color: #fafafa;
+    min-height: 100vh;
+}
+
+main .container {
+    padding-top: 150px;
+    text-align: center;
+}
+
+footer {
+    background-color: #2f3232;
+    color: #fff;
+    height: 100px;
+    position: relative;
+    margin-top: 50px;
+}
+
+
+/* レスポンシブ対応（タブレット用） */
+@media screen and (max-width: 959px) {
+
+}
+
+/* レスポンシブ対応（スマホ用） */
+@media screen and (max-width: 480px) {
+	
+}

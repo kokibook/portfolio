@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="delete-wrapper">
+    <div class="container">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2>本当に削除しますか？</h2>
+            <button type="submit" class="btn btn-delete">削除する</button>
+        </form>
+        <button type="button" class="btn btn-primary" onclick="history.back()">戻る</button>
+    </div>
+</div>
+{% endblock content %}

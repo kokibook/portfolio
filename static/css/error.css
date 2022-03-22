@@ -1,0 +1,7 @@
+.login-error-messages {
+    list-style: none;
+}
+
+.login-error-message, .errorlist {
+    color: #e6003e;
+}

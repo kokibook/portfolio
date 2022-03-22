@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="detail-wrapper">
+    <div class="container">
+        <div class="detail-inner">
+            <div class="detail-img">
+                <img src="{{ person.person_image.url }}">
+            </div>
+            <div class="detail-text">
+                <p>アプリ名： {{ person.app }}</p>
+                <p>名前：  {{ person.name }}</p>
+                <p>年齢： {{ person.age }}</p>
+                <p>住み： {{ person.live }}</p>
+            </div>
+            <div class="detail-impression">
+                <p>~ 出会った感想 ~</p>
+                <p>{{ person.body }}</p>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="history.back()">戻る</button>
+            <div class="detail-created-by">
+                <p>投稿者&emsp;： {{ person.created_by }}</p>
+                <p>投稿日時： {{ person.created | date:"Y-m-d H:i" }}</p>
+                <p>更新日時： {{ person.updated | date:"Y-m-d H:i" }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="judge-wrapper">
+    <div class="container">
+        {% if message %}
+            <ul class="errorlist">
+                <li>{{ message }}</li>
+                <li>顔が映っている写真を選択してください。</li>
+            </ul>
+        {% endif %}
+        <div class="judge-text-content">
+            <span class="judge-text">詐欺写真かどうか<br />判定してみましょう</span>
+        </div>
+        <div class="judge-img-arrow">
+            <img src="{% static 'arrow.png' %}" alt="" width="100" />
+        </div>
+        <form action="{% url 'result' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-image">
+                {{ form.image }}
+            </div>
+            <div class="custom-input-file">
+                <input type="text" id="judge-photo-cover" placeholder="ファイルを選択してください" disabled="true">
+                <span class="custom-input-btn"><button type="button" class="custon-btn" onclick="$('input[id=id_image]').click();">参照</button></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-judge">判定</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+
+
+{% block js %}
+<script type="text/javascript" src="{% static 'js/judge.js' %}"></script>
+{% endblock js %}

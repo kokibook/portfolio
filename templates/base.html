@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <!-- favicon -->
+    <link rel="icon", href ="{% static 'favicon.ico' %}">
+    
+    <!-- title -->
+    <title>Real Face or Fake Face ?</title>
+</head>
+<body>
+    <div class="wrapper">
+        {% include 'header.html' %}
+        <main id="main">
+            {% block content %}
+            {% endblock content %}
+        </main>
+        {% include 'footer.html' %}
+    </div>
+
+    <!-- jsファイル -->
+    <script text="text/javascript" src="{% static 'js/header.js' %}"></script>
+    <script text="text/javascript" src="{% static 'js/main.js' %}"></script>
+    {% block js %}
+    {% endblock js %}
+</body>
+</html>

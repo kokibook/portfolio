@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="login-wrapper">
+    <img src="{% static 'favicon.ico' %}" width=150 />
+    <div class="container">
+        <h2>ログイン</h2>
+        {% include "_form.html" with submit_label="ログイン" %}
+        <a href="{% url 'signup' %}">アカウントをお持ちでない方はこちら</a>
+    </div>
+</div>
+{% endblock content %}

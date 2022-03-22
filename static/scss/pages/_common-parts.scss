@@ -1,0 +1,143 @@
+@use '../base/variables' as v;
+
+// エラーメッセージ
+.errorlist {
+    list-style: none;
+    margin-bottom: 1rem;
+
+    li {
+        color: v.$error-msg-color;
+    }
+}
+
+// ボタン
+input[type="submit"], .btn {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+    display: inline-block;
+    padding: 8px 15px;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    color: v.$btn-title-color;
+    border-radius: 0.5rem;
+    box-shadow:0 3px darken(v.$btn-bg-color, 15%);
+    background-color: v.$btn-bg-color;
+    border: none;
+    opacity: 1;
+    &:hover {
+        opacity: 0.8;
+        box-shadow: none;
+        position: relative;
+        top: 3px;
+    }
+}
+
+.btn-delete {
+    background-color: v.$delete-btn-bg-color;
+    box-shadow:0 3px darken(v.$delete-btn-bg-color, 15%);
+}
+
+.btn-new-create {
+    position: fixed;
+    right: 7rem;
+    bottom: 12rem;
+    z-index: 99;
+    a {
+        display: block;
+        font-size: 4rem;
+        font-weight: bold;
+        width: 7rem;
+        height: 7rem;
+        line-height: 7rem;
+        color: v.$btn-title-color;
+        background-color: v.$create-btn-bg-color;
+        text-decoration: none;
+        border-radius: 50%;
+        // box-shadow: inset 0 10px 25px 0 rgba(0, 0, 0, .5);
+        &:hover {
+            opacity: 0.8;
+        }
+        
+    }
+}
+
+// 入力フォーム
+form {
+    margin-bottom: 20px;
+    p {
+        margin-bottom: 15px;
+        input {
+            @include v.input-form;
+        }
+    }
+
+}
+
+// ファイル入力フォーム
+input[type="file"] {
+    display:none;
+}
+
+.custom-input-file {
+    margin-bottom: 2rem;
+
+    input {
+        display: inline-block;
+        width: 35%;
+        margin: 0 auto;
+        @include v.input-form;
+    }
+
+    button {
+        height: 3.7rem;
+        border: 1px solid v.$input-border-color;
+        padding: 0 1rem;
+        color: v.$input-file-btn-color;
+        font-weight: bold;
+        background-color: v.$input-file-btn-bg-color;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        &:hover {
+            @include v.hover-change;
+        }
+    }
+}
+
+// ページネーション
+.pagination {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    font-size: 1.8rem;
+
+    li {
+        padding: 0 0.5rem;
+    }
+
+    a {
+        color: v.$link-color;
+    }
+}
+
+
+// レスポンシブ（タブレット用）
+@media screen and (max-width: v.$tablet) { 
+    .custom-input-file {
+        input {
+            width: 50%;
+        }
+    }
+}
+
+
+// レスポンシブ（スマホ用）
+@media screen and (max-width: v.$sp) {
+    .custom-input-file {
+        input {
+            width: 70%;
+        }
+    }
+}

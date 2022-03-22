@@ -1,0 +1,43 @@
+.object-group {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.object-list {
+    box-sizing: border-box;
+    width: 25%;
+    margin: 20px 0;
+}
+
+.object-list-box {
+    border: 2px solid #FF99FF;
+    background-color: #fff;
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+.object-list-content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.object-thumnail-box {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.object-thumnail {
+    width: 100%;
+    height: 100%;
+}
+
+.object-text-box {
+    margin: 20px auto 0;
+}
+
+.object-text-box-title {
+    text-align: center;
+}

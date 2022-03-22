@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="update-wrapper">
+    <form action="" method="POST" enctype="multipart/form-data">
+        <div class="update-form">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="update-form-label">
+                {{ field.label_tag }}
+                <div class="update-form-field">
+                    {{ field }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="custom-input-file">
+            <input type="text" id="update-photo-cover" placeholder="ファイルを選択してください" disabled="true">
+            <span class="custom-input-btn"><button type="button" class="custon-btn" onclick="$('input[id=id_person_image]').click();">参照</button></span>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">更新する</button>
+        </div>
+    </form>
+    <button type="button" class="btn btn-primary" onclick="history.back()">戻る</button>
+</div>
+{% endblock content %}
+
+
+{% block js %}
+<script type="text/javascript" src="{% static 'js/update.js' %}"></script>
+{% endblock js %}

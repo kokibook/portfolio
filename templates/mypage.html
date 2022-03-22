@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="mypage-wrapper">
+    {% if not object_list %}
+    <p>投稿が1つも存在しません。</p>
+    {% endif %}
+    <div class="objects-wrapper">
+    {% for item in object_list %}
+        <div class="object-wrapper">
+            <div class="object-container">
+                <div class="object-thumnail">
+                    <img src="{{ item.person_image.url }}">
+                </div>
+                <div class=object-content>
+                    <p>アプリ名：{{ item.app }}</p>
+                    <p>名前： {{ item.name }}</p>
+                    <p>年齢： {{ item.age }}</p>
+                    <p>住み： {{ item.live }}</p>
+                </div>
+                <div class="object-btn">
+                    <a href="{% url 'update' item.pk %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">編集</a>
+                    <a href="{% url 'delete-confirm' item.pk %}" class="btn btn-delete" tabindex="-1" role="button" aria-disabled="true">削除</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    <div class="btn-new-create">
+        <a href="{% url 'create' %}">＋</a>
+    </div>
+    {% include 'pagination.html' %}
+</div>
+{% endblock content %}

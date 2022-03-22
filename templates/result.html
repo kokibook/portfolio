@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="result-wrapper">
+    <div class="container">
+        <div class="result-title">
+            <h2>{{ percentage }}%の確率で<br><span style="color: #FF69A3">{{ females }}</span>です。</h2>
+            <img src="../{{ face_image }}" width="150px" height="150px" />
+        </div>
+        <div class="result-feature">
+            {% if classes == "purikura" %}
+            {% include 'result_pages/purikura.html' %}
+        
+            {% elif classes == "mask" %}
+            {% include 'result_pages/mask.html' %}
+        
+            {% elif classes == "snow" %}
+            {% include 'result_pages/snow.html' %}
+        
+            {% elif classes == "degree" %}
+            {% include 'result_pages/degree.html' %}
+        
+            {% elif classes == "normal" %}
+            {% include 'result_pages/normal.html' %}
+            {% endif %}
+        </div>
+        <a href="{% url 'judge' %}" class="btn btn-primary btn-result" tabindex="-1" role="button" aria-disabled="true">戻る</a>
+    </div>
+</div>
+{% endblock content %}

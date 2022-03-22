@@ -1,0 +1,40 @@
+header img {
+    vertical-align: middle;
+}
+
+.header-logo {
+    float: left;
+    margin-left: 2%;
+}
+
+.menu-group{
+    list-style: none;
+    text-align: right;
+    vertical-align: middle;
+    margin-top: 3px;
+    margin-right: 2%;
+}
+
+.menu-item{
+    display: inline;
+    padding: 15px 10px;
+}
+
+.menu-item a {
+    color: #2f3232;
+    text-decoration: none;
+}
+
+.menu-item a:hover {
+    opacity: 0.8;
+}
+
+/* レスポンシブ対応（タブレット用） */
+@media screen and (max-width: 959px) {
+
+}
+
+/* レスポンシブ対応（スマホ用） */
+@media screen and (max-width: 480px) {
+	
+}

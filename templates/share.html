@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="share-wrapper">
+    {% if not object_list %}
+    <p>投稿が1つも存在しません。</p>
+    {% endif %}
+    <div class="objects-wrapper">
+    {% for item in object_list %}
+        <div class="object-wrapper">
+            <div class="object-container">
+                <div class="object-thumnail">
+                    <img class="object-thumnail" src="{{ item.person_image.url }}">
+                </div>
+                <div class=object-content>
+                    <p>アプリ名：{{ item.app }}</p>
+                    <p>名前： {{ item.name }}</p>
+                    <p>年齢： {{ item.age }}</p>
+                    <p>住み： {{ item.live }}</p>
+                    <p>投稿者： {{ item.created_by }}</p>
+                    <p class="impression"><a href="{% url 'detail' item.pk %}">>> 出会った感想 <<</a></p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% include 'pagination.html' %}
+{% endblock content %}

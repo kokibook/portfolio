@@ -1,0 +1,6 @@
+{% if request.user.is_anonymous %}
+{% else %}
+<footer id="footer">
+    <small>&copy; 2022 nishimoto inc.</small>
+</footer>
+{% endif %}

@@ -1,0 +1,21 @@
+@use '../base/variables' as v;
+
+.judge-text {
+    padding-bottom: 5px;
+    background: linear-gradient(transparent 50%, yellow 50%);
+}
+
+.judge-img-arrow {
+    margin: 3rem 0;
+    animation: poyopoyo 2s ease-out infinite;
+    opacity: 1;
+}
+
+@keyframes poyopoyo {
+    0%, 40%, 60%, 80% {
+      transform: scale(1.0);
+    }
+    50%, 70% {
+      transform: scale(0.95);
+    }
+}

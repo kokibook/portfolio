@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="signup-wrapper">
+    <img src="{% static 'favicon.ico' %}" width=150 />
+    <div class="container">
+        <h2>アカウント作成完了</h2>
+        <p>アカウントの作成が完了しました。</p>
+        <a class="btn btn-primary" href="{% url 'login' %}">ログイン画面へ</a>
+    </div>
+</div>
+{% endblock content %}

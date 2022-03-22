@@ -1,0 +1,55 @@
+{% load static %}
+
+{% if request.user.is_anonymous %}
+{% else %}
+<header id="header">
+    <!-- ロゴ -->
+    <div class="header-logo">
+        <img src="{% static 'favicon.ico' %}" width=50 />
+    </div>
+
+    
+    <!-- ナビゲーションメニュー -->
+    <nav id="gloval-nav">
+        <ul>
+            <li><a href="{% url 'mypage' %}">マイページ</a></li>
+            <li><a href="{% url 'share' %}">投稿一覧</a></li>
+            <li><a href="{% url 'judge' %}">判定</a></li>
+        </ul>
+    </nav>
+
+    <!-- ユーザー名 -->
+    <div class="user-content">
+        <div class="user-login-name">
+            <p>ユーザー名: {{ request.user }}<span> ▼</span></p>
+        </div>
+        <div class="user-settings">
+            <ul>
+                <li><a href="{% url 'password_change' %}">パスワード変更</a></li>
+                <li><a id="logout" href="{% url 'logout' %}" onclick="return confirm('本当にログアウトしますか？');">ログアウト</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ハンバーガーメニュー -->
+    <div id="hamburger-menu-btn">
+       <span></span>
+       <span></span>
+       <span></span>
+    </div>
+
+    <!-- ハンバーガーメニューの中身 -->
+    <div class="hamburger-menu-wrapper" id="hamburger-menu-wrapper">
+        <div class="hamburger-menu-contents">
+            <p>ユーザー名: {{ request.user }}</p>
+            <ul>
+                <li><a href="{% url 'mypage' %}">マイページ</a></li>
+                <li><a href="{% url 'share' %}">投稿一覧</a></li>
+                <li><a href="{% url 'judge' %}">判定</a></li>
+                <li><a href="{% url 'password_change' %}">パスワード変更</a></li>
+                <li><a id="hamburger-menu-logout" href="{% url 'logout' %}" onclick="return confirm('本当にログアウトしますか？');">ログアウト</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+{% endif %}
