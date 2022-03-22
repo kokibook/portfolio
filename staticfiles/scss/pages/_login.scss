@@ -1,0 +1,9 @@
+@use '../base/variables' as v;
+
+.login-wrapper {
+    margin-top: 8rem;
+
+    a {
+        color: v.$link-color;
+    }
+}

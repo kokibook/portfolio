@@ -1,0 +1,44 @@
+@use '../base/variables' as v;
+
+.detail-wrapper {
+    margin-bottom: 2rem;
+}
+
+.detail-inner {
+    width: 80%;
+    margin: 0 auto;
+
+    img {
+        width: 30rem;
+        margin-bottom: 2rem;
+    }
+
+    button {
+        margin-bottom: 2rem;
+    }
+}
+
+.detail-text {
+    margin: 0 auto 2rem;
+    width: 50%;
+    p {
+        line-height: 2;
+    }
+}
+
+.detail-impression {
+    margin: 0 auto 2rem;
+    width: 70%;
+    word-wrap: break-word;
+    p {
+        &:last-of-type {
+            margin-top: 1rem;
+            text-align: left;
+        }
+    }
+}
+
+.detail-created-by {
+    font-size: 1.2rem;
+    padding: 1rem 0;
+}
