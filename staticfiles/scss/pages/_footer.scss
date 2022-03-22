@@ -1,0 +1,15 @@
+@use '../base/variables' as v;
+
+footer {
+    position: relative;
+    background-color: v.$footer-bg-color;
+    color: v.$footer-color;
+    height: 100px;
+}
+
+small {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

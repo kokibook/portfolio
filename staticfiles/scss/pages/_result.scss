@@ -1,0 +1,63 @@
+@use '../base/variables' as v;
+
+.result-wrapper {
+    .container {
+        width: 70%;
+        margin-bottom: 3rem;
+    }
+}
+
+.result-title {
+    margin-bottom: 3rem;
+}
+
+.result-feature {
+    margin-bottom: 3rem;
+
+    h3 {
+        span {
+            background: linear-gradient(transparent 50%, orange 50%);
+        }
+        margin-bottom: 0.5rem;
+    }
+
+    ul {
+        list-style-position: inside;
+        width: 50%;
+        margin:0 auto 2rem;
+        padding-left: 3rem;
+    }
+
+    li {
+        text-align: left;
+    }
+
+    p {
+        width: 60%;
+        margin: 0 auto;
+        text-align: left;
+    }
+}
+
+// レスポンシブ
+@media screen and (max-width: v.$tablet) {
+    .result-feature {
+        ul {
+            width: 60%;
+            padding-left: 0;
+        }
+    }
+}
+
+@media screen and (max-width: v.$sp) {
+    .result-wrapper {
+        .container {
+            width: 80%;
+        }
+    }
+    .result-feature {
+        ul {
+            width: 70%;
+        }
+    }
+}
