@@ -22,8 +22,8 @@ def index(request):
 
 
 # ログイン画面
-class Login(TemplateView):
-    template_name = "registration/login.html"
+class Login(LoginView):
+    template_name = "login.html"
 
 
 # アカウント作成画面
