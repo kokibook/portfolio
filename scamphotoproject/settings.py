@@ -117,10 +117,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-STATICFILES_DIRS = [str(BASE_DIR / 'static')]
-
+STATIC_ROOT = BASE_DIR / 'static'
 
 # 画像ファイルの保存先（アップローダー側の設定）
 MEDIA_URL = '/media/'
